@@ -141,6 +141,7 @@ export default class IconView extends View {
 	 */
 	private _updateXMLContent() {
 		if ( this.content ) {
+			// @ts-ignore
 			const trimmedContent = typeof this.content === 'string' ? this.content : this.content.content;
 			const parsed = new DOMParser().parseFromString( trimmedContent.trim(), 'image/svg+xml' );
 			const svg = parsed.querySelector( 'svg' )!;
